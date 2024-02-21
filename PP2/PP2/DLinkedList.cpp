@@ -86,10 +86,18 @@ void DLinkedList::remove(DNode* v){
     }
 }
 
-void DLinkedList::removeFront(){
-    remove(header->next);
+Elem DLinkedList::removeFront(){
+    if(!empty()){
+        Elem e = front();
+        remove(header->next);
+        return e;
+    }
 }
 
-void DLinkedList::removeBack(){
-    remove(trailer->prev);
+Elem DLinkedList::removeBack(){
+    if(!empty()){
+        Elem e = back();
+        remove(trailer->prev);
+        return e;
+    }
 }

@@ -1,6 +1,6 @@
 #include "LDeque.hpp"
 
-/*FYE: Functions were provided by the lecture notes given by Dr. Oropallo on this particular
+/*FYE: Functions were provided by the lecture notes given on this particular
       implementation of a deque data structure*/
 
 
@@ -31,14 +31,20 @@ const string& LDeque::back() const throw () {
 
 //ENQUEUE AND DEQUEUE 
 //----------------------------------------------------------------------------------------->
-void LDeque::removeFront() throw() {
+std::string LDeque::removeFront() throw() {
+    if(empty()){return '\0';}
+    std::string value = D.front();
     D.removeFront();
     n--;
+    return value; // Return the stored value
 }
 
-void LDeque::removeBack() throw() {
+std::string LDeque::removeBack() throw() {
+    if(empty()){return '\0';}
+    std::string value = D.back();
     D.removeBack();
     n--;
+    return value; // Return the stored value
 }
 
 void LDeque::insertFront(const string &e) {

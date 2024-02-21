@@ -22,8 +22,8 @@ class DLinkedList : public DNode {
         //Operations to add, remove and check if list is empty for the linked list
         void addFront(const Elem& e);
         void addBack(const Elem& e);
-        void removeFront();
-        void removeBack();
+        Elem removeFront();
+        Elem removeBack();
         bool empty() const;
 };
 
