@@ -3,7 +3,7 @@
 class LDeque {
 private:
     DLinkedList D;
-    int n; //used to keep track of size   
+    int n;  
 public:
     //Constructor/Destructor for deque
     LDeque();

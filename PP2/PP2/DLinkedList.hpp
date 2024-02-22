@@ -1,9 +1,8 @@
 #include "DNode.hpp"
 
-//IE: Remember that Elem in this case is a typedef of string initialized in Node.hpp
+//Elem is a typedef of string initialized in DNode.hpp
 class DLinkedList : public DNode {
     private:
-        //Sentinel nodes
         DNode* header;
         DNode* trailer;
     protected:

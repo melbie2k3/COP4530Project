@@ -23,17 +23,6 @@ public:
 
   virtual std::string prefixToPostfix(std::string inStr) = 0;
 
-  /* Helper functions */
-
-  bool isAlpha(const std::string &s);
-
-  bool isBadInput(const std::string &s);
-
-  bool isOperator(const std::string &s);
-
-  bool isSpace(const std::string &s);
-
-  int assignPrec(const std::string &s);
 };
 
 #endif /* NOTATIONCONVERTERINTERFACE_H */

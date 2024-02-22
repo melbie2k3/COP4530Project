@@ -4,6 +4,7 @@
 
 class NotationConverter : public NotationConverterInterface {
 public:
+// this function wrong
     std::string postfixToInfix(std::string inStr) override {
     
         LDeque D;                        // initialize deque to use
@@ -38,7 +39,7 @@ public:
 
                 ret += "(" + D.removeFront() + " " + temp + " " + D.removeFront() + ")";
 
-                D.removeFront();
+                // D.removeFront();
 
                 D.insertFront(ret);
 
@@ -259,9 +260,65 @@ public:
         return infixToPostfix(in);    
     }
 
+private:
+    bool isOperator(const std::string &s) {
+        bool ret = false;
+        if (s == "+" || s == "-" || s == "*" || s == "/")
+            ret = true;
+        return ret;
+    }
+
+    bool isAlpha(const std::string &s) {
+        bool ret = false;
+        if (s == "A" || s == "B" || s == "C" || s == "D" || s == "E" || s == "F" || s == "G" || s == "H" || s == "I" || s == "J" || s == "K" || s == "L" || s == "M" || s == "N" || s == "O" || s == "P" || s == "Q" || s == "R" ||s == "S" || s == "T" || s == "U" || s == "V" || s == "W" || s == "X" || s == "Y" || s == "Z" || s == "a" || s == "b" || s == "c" || s == "d" || s == "e" || s == "f" || s == "g" || s == "h" || s == "i" || s == "j" || s == "k" || s == "l" || s == "m" || s == "n" || s == "o" || s == "p" || s == "q" || s == "r" ||s == "s" || s == "t" || s == "u" || s == "v" || s == "w" || s == "x" || s == "y" || s == "z")
+            ret = true;
+        return ret;
+    }
+
+    bool isSpace(const std::string &s) {
+        bool ret = false;
+        if (s == " ")
+            ret = true;
+        return ret;
+    }
+
+    bool isBadInput(const std::string &s) {
+        bool ret = false;
+        if (s == "!" || s == "@" || s == "#" || s == "%" || s == "^" || s == "&" || s == "_" || s == "=" || s == "{" || s == "}" || s == "[" || s == "]" || s == "|" || s == "\\" || s == "\"" || s == "'" || s == "<" || s == ">" ||s == "," || s == "." || s == "~" || s == "`" || s == "?" || s == "1" || s == "2" || s == "3" || s == "4" || s == "5" || s == "6" || s == "7" || s == "8" || s == "9" || s == "0")
+            ret = true;
+        return ret;
+    }
+
+    int assignPrec(const std::string &s) {
+        int ret;
+        if(s == "+")
+
+            ret = 1;
+
+        else if(s == "-")
+
+            ret = 2;
+
+        else if(s == "/")
+
+            ret = 3;
+
+        else if(s == "*")
+
+            ret = 4;
+
+        else
+
+            ret = 0;
+
+        return ret;
+
+    }
 };
 
-    bool NotationConverterInterface::isOperator(const std::string &s) {
+    
+    /*
+        bool NotationConverterInterface::isOperator(const std::string &s) {
         bool ret = false;
         if (s == "+" || s == "-" || s == "*" || s == "/")
             ret = true;
@@ -314,6 +371,7 @@ public:
         return ret;
 
     }
+    */
 /*
 struct Node {
     std::string data;
